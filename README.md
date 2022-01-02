@@ -24,6 +24,13 @@ The following assemblies from your local Rimworld installation have to be added 
 * Data\Managed\Assembly-CSharp.dll
 * Data\Managed\UnityEngine.dll
 
-* These four folders must be included to form the mod: 1.3, About, Defs, Textures
+
+These four folders must be included to form the mod: 
+* 1.3
+* About
+* Defs
+* Textures
+
+How to build:
 * /1.3/Assemblies/GraffitiMod.dll is built from the scripts in /source/
 * The folder /external files/ contains the textures as *.psd and a reference file for the atlas used to make the art fit.

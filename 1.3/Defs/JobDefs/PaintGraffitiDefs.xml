@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <JobDef>
+    <defName>GraffitiMod_PaintGraffitiJob</defName>
+    <driverClass>GraffitiMod.JobDriver_PaintGraffiti</driverClass>
+    <reportString>painting graffiti.</reportString>
+    <joyDuration>8000</joyDuration>
+    <joyKind>Meditative</joyKind>
+    <taleOnCompletion>GraffitiMod_Paint</taleOnCompletion>
+  </JobDef>
+
+
+	<JoyGiverDef>
+    <defName>GraffitiMod_PaintGraffitiJoy</defName>
+    <giverClass>GraffitiMod.JoyGiver_PaintGraffiti</giverClass>
+    <baseChance>4</baseChance>
+    <jobDef>GraffitiMod_PaintGraffitiJob</jobDef>
+    <joyKind>Meditative</joyKind>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+
+  <TaleDef>
+    <defName>GraffitiMod_Paint</defName>
+    <label>Paint wall</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>1</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef] painting a wall</li>
+        <li>tale_noun->[PAWN_nameDef] smearing paint on a wall</li>
+        <li>image->[PAWN_nameFull] arranging colors on a wall [circumstance_group]</li>
+        <li>image->[PAWN_nameFull] creating a graffiti [circumstance_group]</li>
+        <li>circumstance_phrase->while [PAWN_possessive] friends create a graffiti</li>
+        <li>desc_sentence->A [Color] graffiti was painted on the wall in the background.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+</Defs>

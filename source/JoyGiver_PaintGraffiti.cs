@@ -11,8 +11,8 @@ namespace GraffitiMod
     {
       public override Job TryGiveJob(Pawn pawn)
       {
-        // if (pawn.WorkTypeIsDisabled(WorkTypeDefOf.Art))
-        //   return (Job) null;
+         if (pawn.WorkTypeIsDisabled(WorkTypeDefOf.Art))
+           return (Job) null;
         //Only unhappy pawns create ugly graffiti, because beautiful wall art is not part of this mod (at this time).
         if (pawn.needs.mood.CurLevel > pawn.needs.mood.MaxLevel * 0.6f)
           return (Job) null;

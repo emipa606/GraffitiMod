@@ -17,7 +17,6 @@ namespace GraffitiMod
             base.SpawnSetup(map, respawningAfterLoad);
             Parent = Position.GetEdifice(map);
         }
-
         
         public override void Tick()
         {

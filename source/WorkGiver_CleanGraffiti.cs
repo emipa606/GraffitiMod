@@ -11,7 +11,7 @@ namespace GraffitiMod
    */
   internal class WorkGiver_CleanGraffiti : WorkGiver_Scanner
   {
-    private int MinTicksSinceThickened = 600;
+    // private int MinTicksSinceThickened = 600;
 
     public override PathEndMode PathEndMode => PathEndMode.Touch;
 

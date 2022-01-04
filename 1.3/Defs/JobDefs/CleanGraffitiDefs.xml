@@ -22,24 +22,5 @@
     </requiredCapacities>
   </WorkGiverDef>
 
-
-  <TaleDef>
-    <defName>GraffitiMod_Clean</defName>
-    <label>Clean wall</label>
-    <taleClass>Tale_SinglePawn</taleClass>
-    <type>Volatile</type>
-    <baseInterest>1</baseInterest>
-    <rulePack>
-      <rulesStrings>
-        <li>tale_noun->[PAWN_nameDef] cleaned graffiti from a wall</li>
-        <li>tale_noun->[PAWN_nameDef] cleaned paint off the wall</li>
-        <li>image->[PAWN_nameFull] removing colors from a wall [circumstance_group]</li>
-        <li>image->[PAWN_nameFull] scrubbing off a graffiti [circumstance_group]</li>
-        <li>circumstance_phrase->while [PAWN_possessive] friends cleaned off a graffiti</li>
-        <li>desc_sentence->A [Color] graffiti is being cleaned from the wall in the background.</li>
-      </rulesStrings>
-    </rulePack>
-  </TaleDef>
-
   
 </Defs>

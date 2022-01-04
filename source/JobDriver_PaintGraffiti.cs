@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 using Verse.AI;
+using UnityEngine;
 
 namespace GraffitiMod
 {
@@ -16,6 +17,7 @@ namespace GraffitiMod
         protected override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Goto.GotoCell(TargetIndex.A, PathEndMode.Touch);
+            
             Toil doWork = new Toil()
             {
                 initAction = (Action) (() => this.workLeft = BaseWorkAmount)
@@ -25,13 +27,23 @@ namespace GraffitiMod
                 this.workLeft -= doWork.actor.GetStatValue(StatDefOf.ConstructionSpeed) * 1.0f;
                 if ((double) this.workLeft <= 0.0)
                 {
+                    if (pawn.MentalState is MentalState_GraffitiPaintingSpree mentalState)
+                            mentalState.Notify_PaintedTarget();
+
                     Thing newThing = ThingMaker.MakeThing(GraffitiDefOf.GraffitiMod_Paint);
                     GenSpawn.Spawn(newThing, this.TargetLocA, this.Map);
                     this.pawn.needs.mood.thoughts.memories.TryGainMemory(DefDatabase<ThoughtDef>.GetNamed("GraffitiMod_HappyArtist"));
                     this.ReadyForNextToil();
                 }
                 else
-                    JoyUtility.JoyTickCheckEnd(this.pawn);
+                {
+                    /*
+                     Having a mental break is not a fun recreation activity.
+                     Also: Pawns would stop the painting spree if their recreation were full. 
+                     */
+                    if (!(pawn.MentalState is MentalState_GraffitiPaintingSpree))
+                        JoyUtility.JoyTickCheckEnd(this.pawn);
+                }
             });
             doWork.defaultCompleteMode = ToilCompleteMode.Never;
             doWork.FailOnCannotTouch<Toil>(TargetIndex.A, PathEndMode.Touch);

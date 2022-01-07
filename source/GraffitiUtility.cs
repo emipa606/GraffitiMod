@@ -45,7 +45,8 @@ namespace GraffitiMod
       
       if ((viableWallsList = GetListOfViableWalls(pawn, maxDist)) != null)
       {
-        result = viableWallsList.RandomElement().Position;
+        if (viableWallsList.Count > 0)
+          result = viableWallsList.RandomElement().Position;
       }
       return result;
     }

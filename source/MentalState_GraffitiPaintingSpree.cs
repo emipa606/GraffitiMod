@@ -23,7 +23,11 @@ namespace GraffitiMod
         
         private void ChooseNextTarget()
         {
-            target = GraffitiUtility.GetListOfViableWalls(pawn, 30f).RandomElement();
+            List<Thing> possibleTargets = GraffitiUtility.GetListOfViableWalls(pawn, 30f);
+            if (possibleTargets.Count > 0)
+                target = possibleTargets.RandomElement();
+            else
+                target = null;
         }
         
         public void Notify_InvalidTarget ()

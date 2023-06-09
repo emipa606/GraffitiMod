@@ -34,6 +34,6 @@
     <recoveryMessage>{0} is no longer on a graffiti painting spree.</recoveryMessage>
     <baseInspectLine>Mental state: Graffiti painting spree</baseInspectLine>
     <recoverFromSleep>true</recoverFromSleep>
-    <unspawnedCanDo>true</unspawnedCanDo>
+    <unspawnedNotInCaravanCanDo>true</unspawnedNotInCaravanCanDo>
   </MentalStateDef>
 </Defs>

@@ -7,7 +7,7 @@ public class JobGiver_GraffitiPaintingSpree : ThinkNode_JobGiver
 {
     protected override Job TryGiveJob(Pawn pawn)
     {
-        if (!(pawn.MentalState is MentalState_GraffitiPaintingSpree mentalState_GraffitiPaintingSpree))
+        if (pawn.MentalState is not MentalState_GraffitiPaintingSpree mentalState_GraffitiPaintingSpree)
         {
             Log.Error(
                 "Mental state MentalState_GraffitiPaintingSpree expected but not found. Please report this to the mod creator via Steam.");

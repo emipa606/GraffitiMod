@@ -8,7 +8,7 @@ public class JoyGiver_PaintGraffiti : JoyGiver
 {
     public override Job TryGiveJob(Pawn pawn)
     {
-        if (pawn.WorkTypeIsDisabled(WorkTypeDefOf.Art))
+        if (pawn.WorkTypeIsDisabled(GraffitiDefOf.Art))
         {
             return null;
         }
@@ -18,7 +18,7 @@ public class JoyGiver_PaintGraffiti : JoyGiver
             return null;
         }
 
-        if (pawn.skills.AverageOfRelevantSkillsFor(WorkTypeDefOf.Art) < 3f)
+        if (pawn.skills.AverageOfRelevantSkillsFor(GraffitiDefOf.Art) < 3f)
         {
             return null;
         }

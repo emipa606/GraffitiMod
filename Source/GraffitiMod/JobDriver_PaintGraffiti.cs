@@ -38,7 +38,7 @@ public class JobDriver_PaintGraffiti : JobDriver
                     DefDatabase<ThoughtDef>.GetNamed("GraffitiMod_HappyArtist"));
                 ReadyForNextToil();
             }
-            else if (!(pawn.MentalState is MentalState_GraffitiPaintingSpree))
+            else if (pawn.MentalState is not MentalState_GraffitiPaintingSpree)
             {
                 JoyUtility.JoyTickCheckEnd(pawn);
             }

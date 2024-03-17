@@ -6,7 +6,7 @@ namespace GraffitiMod;
 
 public class MentalStateWorker_GraffitiPaintingSpree : MentalStateWorker
 {
-    private static List<Thing> tmpThings = new List<Thing>();
+    private static List<Thing> tmpThings = [];
 
     public override bool StateCanOccur(Pawn pawn)
     {

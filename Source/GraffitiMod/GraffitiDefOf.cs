@@ -21,4 +21,6 @@ public static class GraffitiDefOf
     public static MentalBreakDef GraffitiMod_GraffitiPaintingSpreeBreak;
 
     public static MentalStateDef GraffitiMod_GraffitiPaintingSpreeState;
+
+    public static WorkTypeDef Art;
 }

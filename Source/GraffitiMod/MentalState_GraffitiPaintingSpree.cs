@@ -6,25 +6,21 @@ namespace GraffitiMod;
 
 public class MentalState_GraffitiPaintingSpree : MentalState
 {
-    public Thing target;
+    private Thing target;
 
     public override RandomSocialMode SocialModeMax()
     {
         return RandomSocialMode.Off;
     }
 
-    public override void MentalStateTick()
+    public override void MentalStateTick(int delta)
     {
-        if (target == null)
-        {
-            ChooseNextTarget();
-        }
-        else if (!target.Spawned)
+        if (target is not { Spawned: true })
         {
             ChooseNextTarget();
         }
 
-        base.MentalStateTick();
+        base.MentalStateTick(delta);
     }
 
     private void ChooseNextTarget()

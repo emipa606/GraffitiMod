@@ -21,7 +21,7 @@ public static class GraffitiUtility
             var list2 = new List<Thing>();
             foreach (var thing in list)
             {
-                if (thing.Position.InHorDistOf(pawn.Position, maxDist) && IsGoodPaintWallCell(thing.Position, pawn))
+                if (thing.Position.InHorDistOf(pawn.Position, maxDist) && isGoodPaintWallCell(thing.Position, pawn))
                 {
                     list2.Add(thing);
                 }
@@ -50,7 +50,7 @@ public static class GraffitiUtility
         return result;
     }
 
-    private static bool IsGoodPaintWallCell(IntVec3 c, Pawn pawn)
+    private static bool isGoodPaintWallCell(IntVec3 c, Pawn pawn)
     {
         if (c.IsForbidden(pawn))
         {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: clean wall -->
+  <GraffitiMod_Clean.label>clean wall</GraffitiMod_Clean.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] cleaned graffiti from a wall</li>
+    <li>tale_noun->[PAWN_nameDef] cleaned paint off the wall</li>
+    <li>image->[PAWN_nameFull] removing colors from a wall [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] scrubbing off a graffiti [circumstance_group]</li>
+    <li>circumstance_phrase->while [PAWN_possessive] friends cleaned off a graffiti</li>
+    <li>desc_sentence->A [Color] graffiti is being cleaned from the wall in the background.</li>
+  -->
+  <GraffitiMod_Clean.rulePack.rulesStrings>
+    <li>tale_noun->[PAWN_nameDef] cleaned graffiti from a wall</li>
+    <li>tale_noun->[PAWN_nameDef] cleaned paint off the wall</li>
+    <li>image->[PAWN_nameFull] removing colors from a wall [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] scrubbing off a graffiti [circumstance_group]</li>
+    <li>circumstance_phrase->while [PAWN_possessive] friends cleaned off a graffiti</li>
+    <li>desc_sentence->A [Color] graffiti is being cleaned from the wall in the background.</li>
+  </GraffitiMod_Clean.rulePack.rulesStrings>
+  <!-- EN: Paint wall -->
+  <GraffitiMod_Paint.label>Paint wall</GraffitiMod_Paint.label>
+  <!-- EN:
+    <li>tale_noun->[PAWN_nameDef] painting a wall</li>
+    <li>tale_noun->[PAWN_nameDef] smearing paint on a wall</li>
+    <li>image->[PAWN_nameFull] arranging colors on a wall [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] creating a graffiti [circumstance_group]</li>
+    <li>circumstance_phrase->while [PAWN_possessive] friends create a graffiti</li>
+    <li>desc_sentence->A [Color] graffiti was painted on the wall in the background.</li>
+  -->
+  <GraffitiMod_Paint.rulePack.rulesStrings>
+    <li>tale_noun->[PAWN_nameDef] painting a wall</li>
+    <li>tale_noun->[PAWN_nameDef] smearing paint on a wall</li>
+    <li>image->[PAWN_nameFull] arranging colors on a wall [circumstance_group]</li>
+    <li>image->[PAWN_nameFull] creating a graffiti [circumstance_group]</li>
+    <li>circumstance_phrase->while [PAWN_possessive] friends create a graffiti</li>
+    <li>desc_sentence->A [Color] graffiti was painted on the wall in the background.</li>
+  </GraffitiMod_Paint.rulePack.rulesStrings>
+</LanguageData>

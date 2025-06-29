@@ -22,7 +22,7 @@ public class JobDriver_PaintGraffiti : JobDriver
         {
             initAction = delegate { workLeft = 500f; }
         };
-        doWork.tickAction = delegate
+        doWork.tickIntervalAction = delegate(int delta)
         {
             workLeft -= doWork.actor.GetStatValue(StatDefOf.ConstructionSpeed) * 1f;
             if (workLeft <= 0.0)
@@ -40,7 +40,7 @@ public class JobDriver_PaintGraffiti : JobDriver
             }
             else if (pawn.MentalState is not MentalState_GraffitiPaintingSpree)
             {
-                JoyUtility.JoyTickCheckEnd(pawn);
+                JoyUtility.JoyTickCheckEnd(pawn, delta);
             }
         };
         doWork.defaultCompleteMode = ToilCompleteMode.Never;

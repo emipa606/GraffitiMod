@@ -25,7 +25,7 @@ internal class WorkGiver_CleanGraffiti : WorkGiver_Scanner
 
     public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
     {
-        return t is Filth_Graffiti filth_Graffiti && filth_Graffiti.Map.areaManager.Home[filth_Graffiti.Position] &&
+        return t is Filth_Graffiti filthGraffiti && filthGraffiti.Map.areaManager.Home[filthGraffiti.Position] &&
                pawn.CanReserve(t, 1, -1, null, forced);
     }
 
@@ -33,13 +33,13 @@ internal class WorkGiver_CleanGraffiti : WorkGiver_Scanner
     {
         var job = JobMaker.MakeJob(GraffitiDefOf.GraffitiMod_CleanJob);
         job.AddQueuedTarget(TargetIndex.A, t);
-        var num = 15;
+        const int num = 15;
         var map = t.Map;
         var room = t.GetRoom();
         for (var i = 0; i < 100; i++)
         {
             var c2 = t.Position + GenRadial.RadialPattern[i];
-            if (!ShouldClean(c2))
+            if (!shouldClean(c2))
             {
                 continue;
             }
@@ -66,7 +66,7 @@ internal class WorkGiver_CleanGraffiti : WorkGiver_Scanner
 
         return job;
 
-        bool ShouldClean(IntVec3 c)
+        bool shouldClean(IntVec3 c)
         {
             if (!c.InBounds(map))
             {

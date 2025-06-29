@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: graffiti painting spree -->
+  <GraffitiMod_GraffitiPaintingSpreeState.label>graffiti painting spree</GraffitiMod_GraffitiPaintingSpreeState.label>
+  <!-- EN: Mental state: Graffiti painting spree -->
+  <GraffitiMod_GraffitiPaintingSpreeState.baseInspectLine>Mental state: Graffiti painting spree</GraffitiMod_GraffitiPaintingSpreeState.baseInspectLine>
+  <!-- EN: {0} is on a graffiti painting spree.\n\n[PAWN_pronoun] will randomly smear walls with his so-called art for a while. -->
+  <GraffitiMod_GraffitiPaintingSpreeState.beginLetter>{0} is on a graffiti painting spree.
+
+[PAWN_pronoun] will randomly smear walls with his so-called art for a while.</GraffitiMod_GraffitiPaintingSpreeState.beginLetter>
+  <!-- EN: {0} is no longer on a graffiti painting spree. -->
+  <GraffitiMod_GraffitiPaintingSpreeState.recoveryMessage>{0} is no longer on a graffiti painting spree.</GraffitiMod_GraffitiPaintingSpreeState.recoveryMessage>
+</LanguageData>

@@ -5,7 +5,7 @@ namespace GraffitiMod;
 
 public class Filth_Graffiti : Building_Art
 {
-    public Building Parent { get; private set; }
+    private Building Parent { get; set; }
 
     public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
@@ -13,7 +13,7 @@ public class Filth_Graffiti : Building_Art
         Parent = Position.GetEdifice(map);
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         if (Parent.DestroyedOrNull())
         {

@@ -24,7 +24,7 @@ public class JobDriver_PaintGraffiti : JobDriver
         };
         doWork.tickIntervalAction = delegate(int delta)
         {
-            workLeft -= doWork.actor.GetStatValue(StatDefOf.ConstructionSpeed) * 1f;
+            workLeft -= doWork.actor.GetStatValue(StatDefOf.ConstructionSpeed) * delta;
             if (workLeft <= 0.0)
             {
                 if (pawn.MentalState is MentalState_GraffitiPaintingSpree mentalState_GraffitiPaintingSpree)

@@ -3,7 +3,13 @@
   "CanAdd": "0",
   "CanRemove": "2",
   "PreviewVersion": "1.6",
-  "LastXmlCleaning": "2025-06-29T15:35:06.5084423+02:00",
+  "LastXmlCleaning": "2025-07-30T20:16:04.3514269+02:00",
   "SocialImageSet": true,
-  "SearchTags": " wall decor"
+  "SearchTags": " wall decor",
+  "Patches": false,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 15842,
+  "LinesOfXML": 8289,
+  "CodeBaseSize": 69
 }

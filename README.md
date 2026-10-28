@@ -1,12 +1,12 @@
 # [Graffiti Mod (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2986996933)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of Tartes mod https://steamcommunity.com/sharedfiles/filedetails/?id=2698663430
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
 **Due to lack of spare time I will not update this mod to 1.4. If anyone wants to adopt the mod, please feel free to do so. If you do, please tell me and I will add a link here.**
 
@@ -37,15 +37,15 @@ Feel free to use this mod or parts of it for any purpose, fork it, integrate it,
 
 You are an artist and want to contribute? I'd love to get some better textures into this mod. Maybe together we could even add non ugly graffiti/wall art?
 
-![Image](https://i.imgur.com/YJ92Bdo.jpg)
+![Image](https://img.litet.net/YJ92Bdo.jpg)
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -53,4 +53,4 @@ You are an artist and want to contribute? I'd love to get some better textures i
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/GraffitiMod?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2986996933) | tags:  wall decor
+[![Image](https://img.shields.io/github/v/release/emipa606/GraffitiMod?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2986996933) | wall decor

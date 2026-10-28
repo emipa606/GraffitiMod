@@ -1,38 +1,59 @@
-# .github/copilot-instructions.md
+# GitHub Copilot Instructions for Graffiti Mod (Continued)
 
 ## Mod Overview and Purpose
-
-**Graffiti Enhancement Mod** is designed to expand the cultural and recreational activities available in RimWorld by introducing graffiti painting and cleaning as new interactions for colonists. This mod aims to provide a unique artistic outlet, enhance the game's aesthetic diversity, and create new social dynamics through art.
+The Graffiti Mod (Continued) is an updated version of the Tartes mod for RimWorld. It introduces graffiti behavior to unhappy colonists, allowing them to express their dissatisfaction through art on the walls. The mod aims to provide a more dynamic and artistic environment within the base, while also introducing a new mental break for pawns. Graffiti is ugly and requires cleaning, making it a visual reminder of the colonists' unhappiness.
 
 ## Key Features and Systems
+### Graffiti Creation
+- Unhappy colonists will create graffiti on walls as a form of recreation.
+- The act of creating graffiti provides a positive thought for the colonist for a day.
 
-- **Artistic Expression:** Colonists can paint graffiti on designated surfaces as a form of art, improving their joy levels and reinforcing individual creativity.
-- **Graffiti Cleaning:** Dedicated colonists or those with particular job assignments can clean graffiti when necessary, maintaining colony aesthetics and hygiene.
-- **Mental Breaks and Spree Activities:** New mental states lead colonists into graffiti painting sprees, creating unexpected art pieces and interactions.
-- **Integration into Colony Life:** Graffiti impacts social interactions and colony beauty, influencing colonists' mood and social standings.
-  
+### Graffiti Cleaning
+- Graffiti must be cleaned manually, as it is not automatically removed by the game's cleaning systems.
+- Colonists can be assigned jobs to clean graffiti, which can be managed through other mods like CleaningArea.
+
+### New Mental Break
+- A new mental break called "painting spree" is introduced, which can occur among unhappy colonists.
+
 ## Coding Patterns and Conventions
-
-- **Naming Conventions:** Classes are named for their specific functions, following the naming pattern `ClassName_Action`. This pattern aids in understanding their roles within the mod (e.g., `JobDriver_PaintGraffiti`, `MentalState_GraffitiPaintingSpree`).
-- **Class Structure:** Most classes derive from base game classes like `JobDriver`, `ThinkNode_JobGiver`, and `MentalState`. This inheritance structure helps integrate mod features seamlessly into the game.
-- **Method Accessibility:** Most methods are public unless a specific design pattern requires encapsulation or protection against external modifications (e.g., `private void ChooseNextTarget()`).
+- **Code Organization**: The mod is organized into several C# files, each handling specific aspects of the mod's functionality.
+- **Naming Conventions**: Use descriptive and consistent naming for classes, methods, and variables to maintain readability.
+- **Error Handling**: Implement error handling to manage unexpected situations gracefully.
 
 ## XML Integration
-
-- **XML File Parsing:** Due to errors in parsing XML content, ensure that all XML files strictly follow the expected schema for RimWorld mods. This includes defining custom `ThingDefs`, `JobDefs`, and `MentalBreakDefs` pertinent to graffiti actions.
-- **Defining Resources:** Use XML files to declare new items, jobs, and mental states essential for graffiti interactions. Ensure compatibility with existing game data structures by referencing base game definitions as needed.
+- The mod utilizes XML files to define various aspects such as jobs, mental states, and thing definitions.
+- Ensure that XML files are correctly structured and placed in the appropriate directories within the mod's folder structure.
+- Use XML comments to provide documentation and explanations for each definition.
 
 ## Harmony Patching
-
-- **Selective Patching:** Employ Harmony patches thoughtfully to alter game behaviors related to artwork and social interactions. This could involve patching methods responsible for aesthetic calculations or job selection processes when graffiti is present.
-- **Preservation of Base Methods:** Ensure that patches introduce minimal side effects to maintain the core game logic's integrity and avoid conflicts with other mods by using `HarmonyPrefix` and `HarmonyPostfix` appropriately.
+- Harmony patches are used to modify existing RimWorld code to integrate the mod's functionality.
+- Follow best practices for Harmony patching to ensure stability and compatibility with other mods.
+- Document each patch with comments to explain its purpose and any dependencies.
 
 ## Suggestions for Copilot
+- **Provide Examples**: When using Copilot, provide specific examples of what you are looking to achieve within the mod.
+- **Review Generated Code**: Carefully review the code generated by Copilot to ensure it aligns with the mod's coding conventions and requirements.
+- **Test Thoroughly**: After implementing any generated code, thoroughly test the mod to ensure it functions as expected and does not introduce new bugs.
 
-- **Auto-generation of Repetitive Patterns:** Suggest code snippets for common tasks like job initialization, mental state transitions, and graffiti rendering mechanics.
-- **XML Templates:** Provide templates for XML definitions with commonly needed fields populated (e.g., default `label`, `description` for new definitions).
-- **Debugging Assistance:** Offer debugging tips for XML validation errors, especially when errors involve schema mismatch or path references.
-- **Alternative Implementations:** Suggest alternative methods or design patterns in C# when more efficient or readable forms are possible, particularly in handling game events and state transitions.
-- **Patch Recommendations:** Provide suggestions on where Harmony patches might enhance or optimize mod functionality, such as intercepting specific game event triggers.
+## Contributing to the Mod
+- **Fork and Modify**: Feel free to fork the mod and make modifications. If you contribute significant changes, consider submitting a pull request.
+- **Art Contributions**: Contributions of better textures or non-ugly graffiti are welcome. Collaboration to enhance the visual aspects of the mod would be greatly appreciated.
+- **Error Reporting**: Use the provided Discord channel for error reporting. Ensure you include your log and follow the guidelines for reporting issues.
 
-This guide aims to assist developers in effectively utilizing GitHub Copilot for developing a graffiti-focused mod in RimWorld, ensuring both creativity and functionality.
+By following these instructions, you can effectively use GitHub Copilot to enhance and maintain the Graffiti Mod (Continued).
+
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+

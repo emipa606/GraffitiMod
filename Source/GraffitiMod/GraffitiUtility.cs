@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -19,12 +20,11 @@ public static class GraffitiUtility
         {
             var list = pawn.Map.listerThings.ThingsOfDef(ThingDefOf.Wall);
             var list2 = new List<Thing>();
-            foreach (var thing in list)
+            foreach (var thing in list.Where(thing =>
+                         thing.Position.InHorDistOf(pawn.Position, maxDist) &&
+                         isGoodPaintWallCell(thing.Position, pawn)))
             {
-                if (thing.Position.InHorDistOf(pawn.Position, maxDist) && isGoodPaintWallCell(thing.Position, pawn))
-                {
-                    list2.Add(thing);
-                }
+                list2.Add(thing);
             }
 
             if (list2.Count <= 0)

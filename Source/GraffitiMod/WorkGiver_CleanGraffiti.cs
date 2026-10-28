@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -45,12 +46,9 @@ internal class WorkGiver_CleanGraffiti : WorkGiver_Scanner
             }
 
             var thingList = c2.GetThingList(map);
-            foreach (var thing in thingList)
+            foreach (var thing in thingList.Where(thing => thing != t && HasJobOnThing(pawn, thing, forced)))
             {
-                if (HasJobOnThing(pawn, thing, forced) && thing != t)
-                {
-                    job.AddQueuedTarget(TargetIndex.A, thing);
-                }
+                job.AddQueuedTarget(TargetIndex.A, thing);
             }
 
             if (job.GetTargetQueue(TargetIndex.A).Count >= num)
@@ -84,12 +82,12 @@ internal class WorkGiver_CleanGraffiti : WorkGiver_Scanner
                 return false;
             }
 
-            foreach (var regionLink in region.links)
+            foreach (var regions in region.links.Select(link => link.regions))
             {
                 for (var l = 0; l < 2; l++)
                 {
-                    if (regionLink.regions[l] != null && !Equals(regionLink.regions[l], region) &&
-                        regionLink.regions[l].valid && regionLink.regions[l].Room == room)
+                    if (regions[l] != null && !Equals(regions[l], region) &&
+                        regions[l].valid && regions[l].Room == room)
                     {
                         return true;
                     }

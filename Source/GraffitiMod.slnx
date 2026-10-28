@@ -6,4 +6,26 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="GraffitiMod/GraffitiMod.csproj" />
+  <Folder Name="/XML/1.7/Defs/ThoughtDefs/">
+    <File Path="../1.7/Defs/ThoughtDefs/GraffitiMod_HappyArtist.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThingDefs/">
+    <File Path="../1.7/Defs/ThingDefs/GraffitiThing.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/TaleDefs/">
+    <File Path="../1.7/Defs/TaleDefs/Tales_SinglePawn.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/MentalStateDefs/">
+    <File Path="../1.7/Defs/MentalStateDefs/Graffiti_Spree.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/JobDefs/">
+    <File Path="../1.7/Defs/JobDefs/CleanGraffitiDefs.xml" />
+    <File Path="../1.7/Defs/JobDefs/PaintGraffitiDefs.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThinkTreeDefs/">
+    <File Path="../1.7/Defs/ThinkTreeDefs/SubTrees_Misc.xml" />
+  </Folder>
 </Solution>

@@ -14,23 +14,23 @@ public class JobDriver_CleanGraffiti : JobDriver
 
     private float totalCleaningWorkRequired;
 
-    private Filth_Graffiti Graffiti => (Filth_Graffiti)job.GetTarget(TargetIndex.A).Thing;
+    private Filth_Graffiti Graffiti => (Filth_Graffiti)job.GetTarget(FilthInd).Thing;
 
     public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
-        pawn.ReserveAsManyAsPossible(job.GetTargetQueue(TargetIndex.A), job);
+        pawn.ReserveAsManyAsPossible(job.GetTargetQueue(FilthInd), job);
         return true;
     }
 
     protected override IEnumerable<Toil> MakeNewToils()
     {
-        var initExtractTargetFromQueue = Toils_JobTransforms.ClearDespawnedNullOrForbiddenQueuedTargets(TargetIndex.A);
+        var initExtractTargetFromQueue = Toils_JobTransforms.ClearDespawnedNullOrForbiddenQueuedTargets(FilthInd);
         yield return initExtractTargetFromQueue;
-        yield return Toils_JobTransforms.SucceedOnNoTargetInQueue(TargetIndex.A);
-        yield return Toils_JobTransforms.ExtractNextTargetFromQueue(TargetIndex.A);
-        yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch)
-            .JumpIfDespawnedOrNullOrForbidden(TargetIndex.A, initExtractTargetFromQueue)
-            .JumpIfOutsideHomeArea(TargetIndex.A, initExtractTargetFromQueue);
+        yield return Toils_JobTransforms.SucceedOnNoTargetInQueue(FilthInd);
+        yield return Toils_JobTransforms.ExtractNextTargetFromQueue(FilthInd);
+        yield return Toils_Goto.GotoThing(FilthInd, PathEndMode.Touch)
+            .JumpIfDespawnedOrNullOrForbidden(FilthInd, initExtractTargetFromQueue)
+            .JumpIfOutsideHomeArea(FilthInd, initExtractTargetFromQueue);
         var clean = new Toil
         {
             initAction = delegate
@@ -55,8 +55,8 @@ public class JobDriver_CleanGraffiti : JobDriver
             },
             defaultCompleteMode = ToilCompleteMode.Never
         };
-        clean.WithEffect(EffecterDefOf.Clean, TargetIndex.A);
-        clean.WithProgressBar(TargetIndex.A, () => totalCleaningWorkDone / totalCleaningWorkRequired, true);
+        clean.WithEffect(EffecterDefOf.Clean, FilthInd);
+        clean.WithProgressBar(FilthInd, () => totalCleaningWorkDone / totalCleaningWorkRequired, true);
         clean.PlaySustainerOrSound(delegate
         {
             var def = Graffiti.def;
@@ -64,8 +64,8 @@ public class JobDriver_CleanGraffiti : JobDriver
                 ? def.filth.cleaningSound
                 : SoundDefOf.Interact_CleanFilth;
         });
-        clean.JumpIfDespawnedOrNullOrForbidden(TargetIndex.A, initExtractTargetFromQueue);
-        clean.JumpIfOutsideHomeArea(TargetIndex.A, initExtractTargetFromQueue);
+        clean.JumpIfDespawnedOrNullOrForbidden(FilthInd, initExtractTargetFromQueue);
+        clean.JumpIfOutsideHomeArea(FilthInd, initExtractTargetFromQueue);
         yield return clean;
         yield return Toils_Jump.Jump(initExtractTargetFromQueue);
     }
